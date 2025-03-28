@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="60" fill="#4F46E5"/>
+  <text x="20" y="40" font-family="Arial" font-size="24" fill="white">Sprunt Dashboard</text>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="60" width="200" height="540" fill="#E5E7EB"/>
+  <text x="20" y="100" font-family="Arial" font-size="16" fill="#374151">Standups</text>
+  <text x="20" y="130" font-family="Arial" font-size="16" fill="#374151">Tasks</text>
+  <text x="20" y="160" font-family="Arial" font-size="16" fill="#374151">Sprints</text>
+  <text x="20" y="190" font-family="Arial" font-size="16" fill="#374151">Analytics</text>
+  
+  <!-- Main Content -->
+  <rect x="220" y="80" width="560" height="200" fill="white" rx="8"/>
+  <text x="240" y="120" font-family="Arial" font-size="18" fill="#111827">Daily Standup Summary</text>
+  <text x="240" y="150" font-family="Arial" font-size="14" fill="#6B7280">AI-generated progress report based on commits and PRs</text>
+  
+  <rect x="220" y="300" width="560" height="200" fill="white" rx="8"/>
+  <text x="240" y="340" font-family="Arial" font-size="18" fill="#111827">Task Management</text>
+  <text x="240" y="370" font-family="Arial" font-size="14" fill="#6B7280">AI-powered task prioritization and sprint planning</text>
+  
+  <rect x="220" y="520" width="560" height="60" fill="white" rx="8"/>
+  <text x="240" y="560" font-family="Arial" font-size="18" fill="#111827">AI Insights & Analytics</text>
+</svg> 
