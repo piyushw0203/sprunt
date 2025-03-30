@@ -56,7 +56,7 @@ sprunt/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/sprunt.git
+git clone https://github.com/piyushw0203/sprunt.git
 cd sprunt
 ```
 
