@@ -8,7 +8,13 @@ dotenv.config();
 
 // Initialize Express app
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:3000',  // Adjust the origin as needed
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 // Initialize Supabase client
@@ -21,10 +27,11 @@ const supabase = createClient(
 app.post('/api/demo/schedule', async (req, res) => {
   try {
     const { name, email, company, teamSize, preferredDate, message } = req.body;
+    console.log('Received request data:', name, email. message);
 
     // Store demo request in Supabase
     const { data, error } = await supabase
-      .from('demo_requests')
+      .from('demo_schedule')
       .insert([
         {
           name,
@@ -37,7 +44,10 @@ app.post('/api/demo/schedule', async (req, res) => {
         }
       ]);
 
-    if (error) throw error;
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
 
     // TODO: Send email notification to sales team
     // TODO: Send confirmation email to user

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
+import axios from 'axios';
 
 export default function Demo() {
   const [formData, setFormData] = useState({
@@ -13,10 +14,40 @@ export default function Demo() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission
-    console.log('Form submitted:', formData);
+
+    console.log(formData);
+  
+    try {
+      // Send a POST request to the backend API using axios
+      const response = await axios.post('http://localhost:3002/api/demo/schedule', formData);
+      console.log("response from demo/schedule api: ", response)
+  
+      if (response.status === 200) {
+        // Clear the form after submission
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          teamSize: '',
+          preferredDate: '',
+          message: ''
+        });
+        console.log('Form submitted successfully:', response.data);
+      } else {
+        console.log('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.error('Axios error:', error.response?.data || error.message);
+      } else {
+        console.error('Unexpected error:', error);
+      }
+    }
+    finally {
+      console.log("Finally");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
