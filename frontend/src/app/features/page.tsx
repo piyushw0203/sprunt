@@ -121,6 +121,28 @@ export default function Features() {
                 <li>• Timeline predictions</li>
               </ul>
             </div>
+
+            {/* Discord Voice Transcription */}
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="h-12 w-12 rounded-md bg-indigo-500 flex items-center justify-center mb-4">
+                <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Discord Voice Transcription</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Real-time voice transcription</li>
+                <li>• Automatic meeting summaries</li>
+                <li>• Searchable conversation history</li>
+                <li>• Easy access to past discussions</li>
+              </ul>
+              <Link
+                href="/transcriptions"
+                className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+              >
+                View Transcriptions
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -135,12 +157,20 @@ export default function Features() {
           <p className="mt-6 text-lg leading-8 text-indigo-200">
             Join the revolution in software development. Let AI handle the agile ceremonies while you focus on building great software.
           </p>
-          <Link
-            href="/demo"
-            className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
-          >
-            Schedule a Demo
-          </Link>
+          <div className="mt-8 space-x-4">
+            <Link
+              href="/demo"
+              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
+            >
+              Schedule a Demo
+            </Link>
+            <Link
+              href="/transcriptions"
+              className="inline-flex items-center justify-center px-5 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-indigo-600"
+            >
+              View Transcriptions
+            </Link>
+          </div>
         </div>
       </div>
     </main>

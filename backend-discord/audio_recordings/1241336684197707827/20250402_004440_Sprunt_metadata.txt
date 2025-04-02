@@ -1,0 +1,15 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-02T00:44:14.248230
+end_time: 2025-04-02T00:44:43.369168
+duration: 0:00:29.120938
+file_path: audio_recordings\1241336684197707827\20250402_004440_Sprunt.wav
+
+=== TRANSCRIPTION ===
+
+Full Text:
+ Hello, today we are going to work on some API stuff and based on react.js and python postgres.py
+
+Segments:
+

@@ -1,0 +1,10 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-02T00:33:57.531973
+end_time: 2025-04-02T00:34:16.397121
+duration: 0:00:18.865148
+file_path: audio_recordings\1241336684197707827\20250402_003415_Sprunt.wav
+
+=== TRANSCRIPTION ===
+Transcription failed

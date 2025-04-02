@@ -1,7 +1,6 @@
-discord.py==2.3.2
+discord.py
 python-dotenv==1.0.0
 supabase==2.3.0
-SpeechRecognition==3.10.0
-pyaudio==0.2.13
+groq==0.4.1
 numpy==1.24.3
-groq==0.4.1 
+-e ./discord-ext-voice-recv 

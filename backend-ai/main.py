@@ -3,8 +3,10 @@ from pydantic import BaseModel
 from typing import List, Optional
 import os
 from dotenv import load_dotenv
-import groq
+from groq import Groq
 from datetime import datetime
+from fastapi.responses import StreamingResponse
+import json
 
 # Load environment variables
 load_dotenv()
@@ -13,7 +15,7 @@ load_dotenv()
 app = FastAPI(title="Sprunt AI API")
 
 # Initialize Groq client
-client = groq.Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 class Commit(BaseModel):
     sha: str
@@ -45,19 +47,30 @@ class Sprint(BaseModel):
     goals: List[str]
     tasks: List[Task]
 
-async def generate_with_groq(system_prompt: str, user_prompt: str) -> str:
-    """Helper function to generate responses using Groq with Llama 2"""
+async def generate_with_groq(system_prompt: str, user_prompt: str):
+    """Helper function to generate streaming responses using Groq"""
     try:
-        completion = await client.chat.completions.create(
-            model="llama3",  # Using Mixtral model for better performance
+        completion = client.chat.completions.create(
+            model="llama3-8b-8192",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
-            temperature=0.7,
-            max_tokens=1000
+            temperature=1,
+            top_p=1,
+            stream=True,
+            stop=None,
         )
-        return completion.choices[0].message.content
+        
+        async def generate():
+            for chunk in completion:
+                if chunk.choices[0].delta.content:
+                    yield f"data: {json.dumps({'content': chunk.choices[0].delta.content})}\n\n"
+        
+        return StreamingResponse(
+            generate(),
+            media_type="text/event-stream"
+        )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Groq API error: {str(e)}")
 
@@ -76,16 +89,11 @@ async def generate_standup(commits: List[Commit], pull_requests: List[PullReques
         {[f"- #{pr.number}: {pr.title} ({pr.state})" for pr in pull_requests]}
         """
         
-        # Call Groq API
-        response = await generate_with_groq(
+        # Return streaming response
+        return await generate_with_groq(
             "You are an AI Scrum Master. Generate a concise daily standup summary focusing on progress, blockers, and next steps.",
             context
         )
-        
-        return {
-            "summary": response,
-            "timestamp": datetime.now().isoformat()
-        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -103,24 +111,10 @@ async def generate_tasks(commits: List[Commit], sprint: Sprint):
         {[f"- {c.message}" for c in commits]}
         """
         
-        response = await generate_with_groq(
+        return await generate_with_groq(
             "You are an AI Task Manager. Generate relevant tasks based on sprint goals and recent commits.",
             context
         )
-        
-        # Parse the AI response into structured tasks
-        tasks = []
-        for line in response.split('\n'):
-            if line.strip().startswith('-'):
-                tasks.append(Task(
-                    id=str(len(tasks) + 1),
-                    title=line.strip('- '),
-                    description="",
-                    status="TODO",
-                    priority="MEDIUM"
-                ))
-        
-        return tasks
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -134,15 +128,10 @@ async def analyze_velocity(sprints: List[Sprint]):
         {[f"Sprint {s.id}: {len(s.tasks)} tasks" for s in sprints]}
         """
         
-        response = await generate_with_groq(
+        return await generate_with_groq(
             "You are an AI Analytics Expert. Analyze team velocity and provide insights.",
             context
         )
-        
-        return {
-            "analysis": response,
-            "timestamp": datetime.now().isoformat()
-        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -160,15 +149,10 @@ async def detect_bottlenecks(tasks: List[Task], pull_requests: List[PullRequest]
         {[f"- #{pr.number}: {pr.title} ({pr.state})" for pr in pull_requests]}
         """
         
-        response = await generate_with_groq(
+        return await generate_with_groq(
             "You are an AI Process Analyst. Identify bottlenecks in the development process.",
             context
         )
-        
-        return {
-            "bottlenecks": response,
-            "timestamp": datetime.now().isoformat()
-        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
