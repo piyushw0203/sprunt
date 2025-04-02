@@ -1,0 +1,16 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-02T12:28:04.854488
+end_time: 2025-04-02T12:28:58.560011
+duration: 0:00:53.705523
+file_path: audio_recordings\1241336684197707827\20250402_122853_Sprunt.wav
+file_size: 3562.54 KB
+
+=== TRANSCRIPTION ===
+
+Full Text:
+ Hello, today we are going to discuss about API stuff and tomorrow we will be doing documentation part and that's all. And yes, that's everything I guess. How long is this work? Let's see the transcription step. I leave. How long is this work?
+
+Segments:
+

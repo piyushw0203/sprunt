@@ -1,0 +1,16 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-02T00:58:13.490139
+end_time: 2025-04-02T00:58:35.971444
+duration: 0:00:22.481305
+file_path: audio_recordings\1241336684197707827\20250402_005833_Sprunt.wav
+file_size: 1192.54 KB
+
+=== TRANSCRIPTION ===
+
+Full Text:
+ versus Musini
+
+Segments:
+

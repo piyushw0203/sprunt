@@ -1,0 +1,15 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-02T00:37:44.742985
+end_time: 2025-04-02T00:37:57.559342
+duration: 0:00:12.816357
+file_path: audio_recordings\1241336684197707827\20250402_003756_Sprunt.wav
+
+=== TRANSCRIPTION ===
+
+Full Text:
+ Hello, today we are going to do API
+
+Segments:
+
