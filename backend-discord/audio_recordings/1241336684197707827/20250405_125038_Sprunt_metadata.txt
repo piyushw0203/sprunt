@@ -1,0 +1,18 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-05T12:50:20.193762
+end_time: 2025-04-05T12:50:41.846862
+duration: 0:00:21.653100
+file_path: audio_recordings\1241336684197707827\20250405_125038_Sprunt.wav
+file_size: 1488.79 KB
+user_id: 416569167315992578
+user_name: elvii
+
+=== TRANSCRIPTION ===
+
+Full Text:
+ and now hello hello doing uh testing of this bot manual testing and then automation testing
+
+Segments:
+

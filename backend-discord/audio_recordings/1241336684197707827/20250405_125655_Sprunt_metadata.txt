@@ -1,0 +1,16 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-05T12:56:35.003597
+end_time: 2025-04-05T12:56:58.227339
+duration: 0:00:23.223742
+file_path: audio_recordings\1241336684197707827\20250405_125655_Sprunt.wav
+file_size: 1353.79 KB
+
+=== TRANSCRIPTION ===
+
+Full Text:
+ Hello, so right now I removed user ID, variables and whatever it was and
+
+Segments:
+
