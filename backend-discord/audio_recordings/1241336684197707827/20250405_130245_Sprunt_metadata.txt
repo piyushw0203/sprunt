@@ -1,0 +1,18 @@
+guild_name: Sprunt
+guild_id: 1241336684197707827
+channel_name: Lobby
+start_time: 2025-04-05T13:01:53.290172
+end_time: 2025-04-05T13:02:50.984934
+duration: 0:00:57.694762
+file_path: audio_recordings\1241336684197707827\20250405_130245_Sprunt.wav
+file_size: 4736.29 KB
+user_id: 416569167315992578
+user_name: elvii
+
+=== TRANSCRIPTION ===
+
+Full Text:
+ Hello, so right now we work on fixing the UDN using column, adding those columns in our database and let's see if it works now. I don't know what to do. My colleague here he is saying Polatera, that means keep up. But there he is speaking, why he is saying that no one is speaking. Karu leave. I am leaving now.
+
+Segments:
+
