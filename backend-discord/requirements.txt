@@ -1,6 +1,6 @@
 discord.py
 python-dotenv==1.0.0
 supabase==2.3.0
-groq==0.4.1
+groq
 numpy==1.24.3
 -e ./discord-ext-voice-recv 
